@@ -13,6 +13,7 @@
 		4466359B2C65FAFE00BD94FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4466359A2C65FAFE00BD94FD /* Assets.xcassets */; };
 		4466359E2C65FAFE00BD94FD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4466359D2C65FAFE00BD94FD /* Base */; };
 		446635AA2C66003900BD94FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 446635A92C66003900BD94FD /* .gitignore */; };
+		446635AC2C6602F500BD94FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446635AB2C6602F500BD94FD /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4466359D2C65FAFE00BD94FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4466359F2C65FAFE00BD94FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		446635A92C66003900BD94FD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		446635AB2C6602F500BD94FD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				446635952C65FAFD00BD94FD /* ViewController.swift */,
+				446635AB2C6602F500BD94FD /* TabBarController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				446635962C65FAFD00BD94FD /* ViewController.swift in Sources */,
+				446635AC2C6602F500BD94FD /* TabBarController.swift in Sources */,
 				446635922C65FAFD00BD94FD /* AppDelegate.swift in Sources */,
 				446635942C65FAFD00BD94FD /* SceneDelegate.swift in Sources */,
 			);
