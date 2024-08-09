@@ -9,18 +9,19 @@
 /* Begin PBXBuildFile section */
 		446635922C65FAFD00BD94FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446635912C65FAFD00BD94FD /* AppDelegate.swift */; };
 		446635942C65FAFD00BD94FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446635932C65FAFD00BD94FD /* SceneDelegate.swift */; };
-		446635962C65FAFD00BD94FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446635952C65FAFD00BD94FD /* ViewController.swift */; };
+		446635962C65FAFD00BD94FD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446635952C65FAFD00BD94FD /* SearchViewController.swift */; };
 		4466359B2C65FAFE00BD94FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4466359A2C65FAFE00BD94FD /* Assets.xcassets */; };
 		4466359E2C65FAFE00BD94FD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4466359D2C65FAFE00BD94FD /* Base */; };
 		446635AA2C66003900BD94FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 446635A92C66003900BD94FD /* .gitignore */; };
 		446635AC2C6602F500BD94FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446635AB2C6602F500BD94FD /* TabBarController.swift */; };
+		446635B02C660B3000BD94FD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 446635AF2C660B3000BD94FD /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4466358E2C65FAFD00BD94FD /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446635912C65FAFD00BD94FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		446635932C65FAFD00BD94FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		446635952C65FAFD00BD94FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		446635952C65FAFD00BD94FD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4466359A2C65FAFE00BD94FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4466359D2C65FAFE00BD94FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4466359F2C65FAFE00BD94FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				446635B02C660B3000BD94FD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +91,8 @@
 		446635A72C65FD6800BD94FD /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				446635952C65FAFD00BD94FD /* ViewController.swift */,
 				446635AB2C6602F500BD94FD /* TabBarController.swift */,
+				446635AD2C660AD700BD94FD /* Search */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -100,6 +102,14 @@
 			children = (
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		446635AD2C660AD700BD94FD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				446635952C65FAFD00BD94FD /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +128,9 @@
 			dependencies = (
 			);
 			name = iTunesSearch;
+			packageProductDependencies = (
+				446635AF2C660B3000BD94FD /* SnapKit */,
+			);
 			productName = iTunesSearch;
 			productReference = 4466358E2C65FAFD00BD94FD /* iTunesSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 446635852C65FAFD00BD94FD;
+			packageReferences = (
+				446635AE2C660B3000BD94FD /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 4466358F2C65FAFD00BD94FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -173,7 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				446635962C65FAFD00BD94FD /* ViewController.swift in Sources */,
+				446635962C65FAFD00BD94FD /* SearchViewController.swift in Sources */,
 				446635AC2C6602F500BD94FD /* TabBarController.swift in Sources */,
 				446635922C65FAFD00BD94FD /* AppDelegate.swift in Sources */,
 				446635942C65FAFD00BD94FD /* SceneDelegate.swift in Sources */,
@@ -399,6 +415,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		446635AE2C660B3000BD94FD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		446635AF2C660B3000BD94FD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 446635AE2C660B3000BD94FD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 446635862C65FAFD00BD94FD /* Project object */;
 }

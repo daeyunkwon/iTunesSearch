@@ -28,7 +28,7 @@ final class TabBarController: UITabBarController {
         let dummy4 = UINavigationController(rootViewController: UIViewController())
         dummy4.tabBarItem = UITabBarItem(title: "아케이드", image: UIImage(systemName: "star")?.applyingSymbolConfiguration(.init(font: UIFont.systemFont(ofSize: 16))), tag: 3)
         
-        let searchVC = UINavigationController(rootViewController: ViewController())
+        let searchVC = UINavigationController(rootViewController: SearchViewController())
         searchVC.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass")?.applyingSymbolConfiguration(.init(font: UIFont.systemFont(ofSize: 16))), tag: 4)
         
         [dummy1, dummy2, dummy3, dummy4].forEach {
