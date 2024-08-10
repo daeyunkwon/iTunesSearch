@@ -12,6 +12,7 @@ import RxSwift
 //MARK: - iTunesAPIError
 
 enum iTunesAPIError: Error {
+    case notConnectedInternet
     case invalidURL
     case unknownRespose
     case statusError(codeNumber: Int)
@@ -22,6 +23,8 @@ enum iTunesAPIError: Error {
 extension iTunesAPIError {
     var errorDescription: String {
         switch self {
+        case .notConnectedInternet:
+            return "Error: 인터넷 연결 안됨"
         case .invalidURL:
             return "Error: 유효하지 않은 URL"
         case .unknownRespose:
@@ -44,12 +47,12 @@ final class NetworkManager {
     private init() { }
     
     
-    func fetchSoftwareData() -> Observable<SoftwareResult> {
+    func fetchSoftwareData(searchKeyword: String) -> Observable<SoftwareResult> {
         
-        let urlString = "https://itunes.apple.com/search?term=kakao&country=KR&entity=software"
+        let urlString = "https://itunes.apple.com/search?term=\(searchKeyword)&country=KR&entity=software"
         
         let result = Observable<SoftwareResult>.create { observer in
-
+            
             guard let url = URL(string: urlString) else {
                 observer.onError(iTunesAPIError.invalidURL)
                 return Disposables.create()
@@ -58,6 +61,10 @@ final class NetworkManager {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 
                 if error != nil {
+                    if (error! as NSError).code == NSURLErrorNotConnectedToInternet {
+                        observer.onError(iTunesAPIError.notConnectedInternet)
+                        return
+                    }
                     observer.onError(iTunesAPIError.unknownRespose)
                     return
                 }
@@ -85,5 +92,4 @@ final class NetworkManager {
         }
         return result
     }
-    
 }

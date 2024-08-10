@@ -11,7 +11,17 @@ final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAppearance()
         setupTabBar()
+    }
+    
+    private func setupAppearance() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithDefaultBackground()
+        
+        tabBar.standardAppearance = appearance
+        tabBar.scrollEdgeAppearance = appearance
+        tabBar.tintColor = Constant.Color.Icon.primaryColor
     }
     
     private func setupTabBar() {

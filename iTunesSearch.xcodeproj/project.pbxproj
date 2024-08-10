@@ -27,6 +27,12 @@
 		446635D12C6764F300BD94FD /* SubInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446635D02C6764F300BD94FD /* SubInfoLabel.swift */; };
 		446635D42C676C4F00BD94FD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 446635D32C676C4F00BD94FD /* RxCocoa */; };
 		446635D62C676C4F00BD94FD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 446635D52C676C4F00BD94FD /* RxSwift */; };
+		449ACFCB2C676EFC00B0ED37 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFCA2C676EFC00B0ED37 /* NetworkManager.swift */; };
+		449ACFCD2C676F2E00B0ED37 /* Software.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFCC2C676F2E00B0ED37 /* Software.swift */; };
+		449ACFD02C677D2600B0ED37 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFCF2C677D2600B0ED37 /* UIViewController+Extension.swift */; };
+		449ACFD22C6782A500B0ED37 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFD12C6782A500B0ED37 /* SearchViewModel.swift */; };
+		449ACFD42C6782CB00B0ED37 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFD32C6782CB00B0ED37 /* ViewModelType.swift */; };
+		449ACFD62C67D42900B0ED37 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFD52C67D42900B0ED37 /* SearchDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +53,13 @@
 		446635C12C672C7A00BD94FD /* SoftwareThumbImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareThumbImageView.swift; sourceTree = "<group>"; };
 		446635C32C672EE200BD94FD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		446635D02C6764F300BD94FD /* SubInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubInfoLabel.swift; sourceTree = "<group>"; };
-		449ACFC52C676CA400B0ED37 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = iTunesSearch.app; path = "/Users/daeyun/Public/SeSAC/Assignments/iTunesSearch/build/Debug-iphoneos/iTunesSearch.app"; sourceTree = "<absolute>"; };
+		449ACFC82C676D1300B0ED37 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = iTunesSearch.app; path = "/Users/daeyun/Public/SeSAC/Assignments/iTunesSearch/build/Debug-iphoneos/iTunesSearch.app"; sourceTree = "<absolute>"; };
+		449ACFCA2C676EFC00B0ED37 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		449ACFCC2C676F2E00B0ED37 /* Software.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Software.swift; sourceTree = "<group>"; };
+		449ACFCF2C677D2600B0ED37 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		449ACFD12C6782A500B0ED37 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		449ACFD32C6782CB00B0ED37 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		449ACFD52C67D42900B0ED37 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,8 @@
 			children = (
 				446635A52C65FB8500BD94FD /* Application */,
 				446635A82C65FFDC00BD94FD /* Common */,
+				449ACFC92C676EE300B0ED37 /* Service */,
+				449ACFCE2C67700A00B0ED37 /* Model */,
 				446635A72C65FD6800BD94FD /* Presentation */,
 				446635A62C65FB9200BD94FD /* Resource */,
 			);
@@ -127,8 +141,10 @@
 		446635AD2C660AD700BD94FD /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				449ACFD12C6782A500B0ED37 /* SearchViewModel.swift */,
 				446635952C65FAFD00BD94FD /* SearchViewController.swift */,
 				446635BC2C6728BF00BD94FD /* SearchTableViewCell.swift */,
+				449ACFD52C67D42900B0ED37 /* SearchDetailViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -137,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				446635B22C67121F00BD94FD /* UIView+Extension.swift */,
+				449ACFCF2C677D2600B0ED37 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -155,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				446635BA2C67255F00BD94FD /* Reusable.swift */,
+				449ACFD32C6782CB00B0ED37 /* ViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -166,6 +184,22 @@
 				446635D02C6764F300BD94FD /* SubInfoLabel.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		449ACFC92C676EE300B0ED37 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				449ACFCA2C676EFC00B0ED37 /* NetworkManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		449ACFCE2C67700A00B0ED37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				449ACFCC2C676F2E00B0ED37 /* Software.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +225,7 @@
 				446635D52C676C4F00BD94FD /* RxSwift */,
 			);
 			productName = iTunesSearch;
-			productReference = 449ACFC52C676CA400B0ED37 /* iTunesSearch.app */;
+			productReference = 449ACFC82C676D1300B0ED37 /* iTunesSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -250,17 +284,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449ACFD02C677D2600B0ED37 /* UIViewController+Extension.swift in Sources */,
 				446635BD2C6728BF00BD94FD /* SearchTableViewCell.swift in Sources */,
 				446635B82C6722DF00BD94FD /* Constant.swift in Sources */,
 				446635962C65FAFD00BD94FD /* SearchViewController.swift in Sources */,
 				446635C42C672EE200BD94FD /* BaseView.swift in Sources */,
+				449ACFD62C67D42900B0ED37 /* SearchDetailViewController.swift in Sources */,
 				446635D12C6764F300BD94FD /* SubInfoLabel.swift in Sources */,
 				446635AC2C6602F500BD94FD /* TabBarController.swift in Sources */,
+				449ACFCD2C676F2E00B0ED37 /* Software.swift in Sources */,
+				449ACFD42C6782CB00B0ED37 /* ViewModelType.swift in Sources */,
 				446635922C65FAFD00BD94FD /* AppDelegate.swift in Sources */,
 				446635C22C672C7A00BD94FD /* SoftwareThumbImageView.swift in Sources */,
 				446635BB2C67255F00BD94FD /* Reusable.swift in Sources */,
 				446635B32C67121F00BD94FD /* UIView+Extension.swift in Sources */,
+				449ACFCB2C676EFC00B0ED37 /* NetworkManager.swift in Sources */,
 				446635942C65FAFD00BD94FD /* SceneDelegate.swift in Sources */,
+				449ACFD22C6782A500B0ED37 /* SearchViewModel.swift in Sources */,
 				446635BF2C6728D800BD94FD /* BaseTableViewCell.swift in Sources */,
 				446635B62C6712DD00BD94FD /* BaseViewController.swift in Sources */,
 			);
