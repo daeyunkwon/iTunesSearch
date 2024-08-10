@@ -7,6 +7,7 @@
 
 import UIKit
 
+import NVActivityIndicatorView
 import RxSwift
 import RxCocoa
 import SnapKit
@@ -38,6 +39,12 @@ final class SearchViewController: BaseViewController {
         return sc
     }()
     
+    private let indicatorView: NVActivityIndicatorView = {
+        let indicatorView = NVActivityIndicatorView(frame: .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 80, height: 80)), type: .ballRotateChase)
+        indicatorView.color = .systemBlue
+        return indicatorView
+    }()
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -56,15 +63,29 @@ final class SearchViewController: BaseViewController {
         
         let output = viewModel.transform(input: input)
         
-        output.softwareList
+        output.searchButtonTapped
+            .bind(with: self) { owner, _ in
+                owner.indicatorView.startAnimating()
+            }
+            .disposed(by: disposeBag)
+        
+        let softwareList = output.softwareList
+            .share()
+        
+        softwareList
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { row, element, cell in
                 cell.cellConfig(data: element)
-                
+                self.indicatorView.stopAnimating()
+            }
+            .disposed(by: disposeBag)
+        
+        softwareList
+            .bind(with: self) { owner, _ in
+                owner.indicatorView.stopAnimating()
             }
             .disposed(by: disposeBag)
         
         output.networkError
-            .observe(on: MainScheduler.instance)
             .subscribe(with: self) { owner, error in
                 print(error.errorDescription)
                 owner.showNetworkResponseFailAlert(errorType: error)
@@ -92,12 +113,17 @@ final class SearchViewController: BaseViewController {
     
     override func configureHierarchy() {
         view.addSubview(tableView)
+        view.addSubview(indicatorView)
     }
     
     override func configureLayout() {
         tableView.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
             make.bottom.equalToSuperview()
+        }
+        
+        indicatorView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
     

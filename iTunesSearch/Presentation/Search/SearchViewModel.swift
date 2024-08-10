@@ -29,6 +29,7 @@ final class SearchViewModel: ViewModelType {
     //MARK: - Outputs
     
     struct Output {
+        let searchButtonTapped: ControlEvent<Void>
         let softwareList: Observable<[Software]>
         let networkError: PublishSubject<iTunesAPIError>
         let cellSelected: Observable<(ControlEvent<Software>.Element, ControlEvent<IndexPath>.Element)>
@@ -51,6 +52,7 @@ final class SearchViewModel: ViewModelType {
                     let keyword = searchText.trimmingCharacters(in: .whitespaces).replacingOccurrences(of: " ", with: "+")
                     
                     NetworkManager.shared.fetchSoftwareData(searchKeyword: keyword)
+                        .observe(on: MainScheduler.instance)
                         .subscribe(with: self) { owner, softwareResult in
                             owner.softwareList = softwareResult.results
                             softwareList.onNext(owner.softwareList)
@@ -67,6 +69,6 @@ final class SearchViewModel: ViewModelType {
             }
             .disposed(by: disposeBag)
         
-        return Output(softwareList: softwareList, networkError: networkError, cellSelected: input.cellSelected)
+        return Output(searchButtonTapped: input.searchButtonTapped, softwareList: softwareList, networkError: networkError, cellSelected: input.cellSelected)
     }
 }
