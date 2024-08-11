@@ -35,5 +35,9 @@ enum Constant {
         static let softwareName: UIFont = .systemFont(ofSize: 20, weight: .heavy)
         
         static let softwareSubInformation: UIFont = .systemFont(ofSize: 13)
+        
+        static let softwareDescriptionTitle: UIFont = .boldSystemFont(ofSize: 19)
+        
+        static let softwareDescription: UIFont = .systemFont(ofSize: 16)
     }
 }

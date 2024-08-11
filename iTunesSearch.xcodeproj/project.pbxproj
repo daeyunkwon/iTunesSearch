@@ -35,6 +35,10 @@
 		449ACFD62C67D42900B0ED37 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFD52C67D42900B0ED37 /* SearchDetailViewController.swift */; };
 		449ACFD92C67DDA000B0ED37 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 449ACFD82C67DDA000B0ED37 /* NVActivityIndicatorView */; };
 		449ACFDB2C67DDA000B0ED37 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 449ACFDA2C67DDA000B0ED37 /* NVActivityIndicatorViewExtended */; };
+		449ACFDE2C68764D00B0ED37 /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFDD2C68764D00B0ED37 /* DownloadButton.swift */; };
+		449ACFE02C687F7700B0ED37 /* SearchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFDF2C687F7700B0ED37 /* SearchDetailViewModel.swift */; };
+		449ACFE22C688DD200B0ED37 /* SearchDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFE12C688DD200B0ED37 /* SearchDetailCollectionViewCell.swift */; };
+		449ACFE42C688DED00B0ED37 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449ACFE32C688DED00B0ED37 /* BaseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		449ACFD12C6782A500B0ED37 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		449ACFD32C6782CB00B0ED37 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		449ACFD52C67D42900B0ED37 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		449ACFDD2C68764D00B0ED37 /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		449ACFDF2C687F7700B0ED37 /* SearchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewModel.swift; sourceTree = "<group>"; };
+		449ACFE12C688DD200B0ED37 /* SearchDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		449ACFE32C688DED00B0ED37 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +153,8 @@
 		446635AD2C660AD700BD94FD /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				449ACFD12C6782A500B0ED37 /* SearchViewModel.swift */,
-				446635952C65FAFD00BD94FD /* SearchViewController.swift */,
-				446635BC2C6728BF00BD94FD /* SearchTableViewCell.swift */,
-				449ACFD52C67D42900B0ED37 /* SearchDetailViewController.swift */,
+				449ACFE52C68B42F00B0ED37 /* ViewModel */,
+				449ACFE62C68B43C00B0ED37 /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -168,6 +174,7 @@
 				446635C32C672EE200BD94FD /* BaseView.swift */,
 				446635B52C6712DD00BD94FD /* BaseViewController.swift */,
 				446635BE2C6728D800BD94FD /* BaseTableViewCell.swift */,
+				449ACFE32C688DED00B0ED37 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -186,6 +193,7 @@
 			children = (
 				446635C12C672C7A00BD94FD /* SoftwareThumbImageView.swift */,
 				446635D02C6764F300BD94FD /* SubInfoLabel.swift */,
+				449ACFDD2C68764D00B0ED37 /* DownloadButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -204,6 +212,26 @@
 				449ACFCC2C676F2E00B0ED37 /* Software.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		449ACFE52C68B42F00B0ED37 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				449ACFD12C6782A500B0ED37 /* SearchViewModel.swift */,
+				449ACFDF2C687F7700B0ED37 /* SearchDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		449ACFE62C68B43C00B0ED37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				446635952C65FAFD00BD94FD /* SearchViewController.swift */,
+				446635BC2C6728BF00BD94FD /* SearchTableViewCell.swift */,
+				449ACFD52C67D42900B0ED37 /* SearchDetailViewController.swift */,
+				449ACFE12C688DD200B0ED37 /* SearchDetailCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,14 +320,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				449ACFD02C677D2600B0ED37 /* UIViewController+Extension.swift in Sources */,
+				449ACFE22C688DD200B0ED37 /* SearchDetailCollectionViewCell.swift in Sources */,
 				446635BD2C6728BF00BD94FD /* SearchTableViewCell.swift in Sources */,
 				446635B82C6722DF00BD94FD /* Constant.swift in Sources */,
 				446635962C65FAFD00BD94FD /* SearchViewController.swift in Sources */,
 				446635C42C672EE200BD94FD /* BaseView.swift in Sources */,
+				449ACFE42C688DED00B0ED37 /* BaseCollectionViewCell.swift in Sources */,
 				449ACFD62C67D42900B0ED37 /* SearchDetailViewController.swift in Sources */,
 				446635D12C6764F300BD94FD /* SubInfoLabel.swift in Sources */,
 				446635AC2C6602F500BD94FD /* TabBarController.swift in Sources */,
 				449ACFCD2C676F2E00B0ED37 /* Software.swift in Sources */,
+				449ACFE02C687F7700B0ED37 /* SearchDetailViewModel.swift in Sources */,
 				449ACFD42C6782CB00B0ED37 /* ViewModelType.swift in Sources */,
 				446635922C65FAFD00BD94FD /* AppDelegate.swift in Sources */,
 				446635C22C672C7A00BD94FD /* SoftwareThumbImageView.swift in Sources */,
@@ -310,6 +341,7 @@
 				449ACFD22C6782A500B0ED37 /* SearchViewModel.swift in Sources */,
 				446635BF2C6728D800BD94FD /* BaseTableViewCell.swift in Sources */,
 				446635B62C6712DD00BD94FD /* BaseViewController.swift in Sources */,
+				449ACFDE2C68764D00B0ED37 /* DownloadButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

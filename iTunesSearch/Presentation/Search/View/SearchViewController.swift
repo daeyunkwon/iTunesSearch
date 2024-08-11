@@ -99,6 +99,7 @@ final class SearchViewController: BaseViewController {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
                 
                 let vc = SearchDetailViewController()
+                vc.viewModel.software = software
                 self.pushViewController(vc)
             })
             .disposed(by: disposeBag)

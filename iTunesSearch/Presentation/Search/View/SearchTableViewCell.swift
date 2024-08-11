@@ -23,13 +23,8 @@ final class SearchTableViewCell: BaseTableViewCell {
         return label
     }()
     
-    private lazy var downloadButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("받기", for: .normal)
-        btn.setTitleColor(Constant.Color.Button.titleColor, for: .normal)
-        btn.backgroundColor = Constant.Color.Button.backgroundColor
-        btn.clipsToBounds = true
-        btn.isUserInteractionEnabled = true
+    private let downloadButton: UIButton = {
+        let btn = DownloadButton()
         btn.layer.cornerRadius = 17.5
         return btn
     }()
