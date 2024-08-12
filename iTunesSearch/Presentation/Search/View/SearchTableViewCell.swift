@@ -125,9 +125,33 @@ final class SearchTableViewCell: BaseTableViewCell {
     func cellConfig(data: Software) {
         iconImageView.setImage(withURLString: data.artworkUrl100)
         iconImageView.layer.borderWidth = 0.5
-        firstScreenshotImageView.setImage(withURLString: data.screenshotUrls[0])
-        secondScreenshotImageView.setImage(withURLString: data.screenshotUrls[1])
-        thirdScreenshotImageView.setImage(withURLString: data.screenshotUrls[2])
+        
+        for i in 0...data.screenshotUrls.count - 1 {
+            if i == 0 {
+                firstScreenshotImageView.setImage(withURLString: data.screenshotUrls[0])
+                continue
+            }
+            
+            if i == 1 {
+                secondScreenshotImageView.setImage(withURLString: data.screenshotUrls[1])
+                continue
+            }
+            
+            if i == 2 {
+                thirdScreenshotImageView.setImage(withURLString: data.screenshotUrls[2])
+                break
+            }
+        }
+        
+        if data.screenshotUrls.count == 2 {
+            thirdScreenshotImageView.image = nil
+        } else {
+            if data.screenshotUrls.count == 1 {
+                secondScreenshotImageView.image = nil
+                thirdScreenshotImageView.image = nil
+            }
+        }
+        
         softwareNameLabel.text = data.trackName
         categoryLabel.text = data.genres[0]
         rateNumberLabel.text = data.ratingString
